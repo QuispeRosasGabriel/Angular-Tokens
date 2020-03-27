@@ -10,7 +10,9 @@ export class AuthService {
   private API_KEY = "AIzaSyADw7EA6hLUs291pZu_ejv0A2w_Krz4_8o";
   userToken: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.leerToken();
+  }
   //crear nuevo usuario
   // https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 
