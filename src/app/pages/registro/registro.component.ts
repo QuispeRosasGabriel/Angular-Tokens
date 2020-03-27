@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuariomodel } from 'src/app/models/usuariomodel';
 
 @Component({
   selector: 'app-registro',
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-
+  usuario: Usuariomodel
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.usuario = new Usuariomodel();
+    this.usuario.email = "gabrielomarquisperosas@gmail.com"
+  }
 
+  onSubmit() {
+    console.log("formulario enviado");
+    console.log(this.usuario);
 
+  }
 }
