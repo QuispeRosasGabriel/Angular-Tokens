@@ -17,16 +17,20 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit(form?: NgForm) {
+    if (form.invalid) {
+      return;
+    }
     this.auth.nuevoUsuario(this.usuario)
       .subscribe(data => {
         console.log(data);
       },
         (err) => {
-          if (err.error.error.code == 400) {
-            alert("usuario existe")
-          }
+          console.log(err);
+
+          // if (err.error.error.code == 400) {
+          //   alert("usuario existe")
+          // }
         })
-
-
   }
+
 }
